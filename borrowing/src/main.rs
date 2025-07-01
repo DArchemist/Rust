@@ -9,3 +9,13 @@ fn main() {
 fn calculate_length(s: &String) -> usize {
     s.len()
 }
+
+fn mutable_reference() {
+    let mut s = String::from("hello");
+
+    change(&mut s); // Only one mutable reference can be created
+}
+
+fn change(some_string: &mut String) {
+    some_string.push_str(", world");
+}
