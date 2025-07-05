@@ -14,8 +14,14 @@ mod front_of_house {
     }
 }
 
-fn eat_at_restaurant() {
-    crate::front_of_house::hosting::add_to_waitlist();
+use crate::front_of_house::hosting;
 
-    front_of_house::hosting::add_to_waitlist();
+pub fn eat_at_restaurant() {
+    crate::front_of_house::hosting::add_to_waitlist(); // absolute path
+
+    front_of_house::hosting::add_to_waitlist(); // Relative path
+
+    hosting::add_to_waitlist(); // Bringing path to scope using "use".
+
+    
 }
